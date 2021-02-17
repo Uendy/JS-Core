@@ -1,0 +1,9 @@
+{
+  "name": "q03-letter-occurances-in-string",
+  "version": "0.0.0",
+  "description": "Q03 Letter Occurances in String",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  }
+}

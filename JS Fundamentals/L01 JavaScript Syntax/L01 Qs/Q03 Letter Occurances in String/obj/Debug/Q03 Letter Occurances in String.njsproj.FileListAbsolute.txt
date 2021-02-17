@@ -1,0 +1,2 @@
+C:\Users\Alexb\Desktop\Programming\JS Core\JS-Core\JS Fundamentals\L01 JavaScript Syntax\L01 Qs\Q03 Letter Occurances in String\obj\Debug\Q03 Letter Occurances in String.njsproj.CoreCompileInputs.cache
+C:\Users\Alexb\Desktop\Programming\JS Core\JS-Core\JS Fundamentals\L01 JavaScript Syntax\L01 Qs\Q03 Letter Occurances in String\bin\Microsoft.NodejsTools.WebRole.dll

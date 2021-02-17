@@ -1,0 +1,2 @@
+C:\Users\Alexb\Desktop\Programming\JS Core\JS-Core\JS Fundamentals\L01 JavaScript Syntax\L01 Qs\Q02 Sum and VAT\obj\Debug\Q02 Sum and VAT.njsproj.CoreCompileInputs.cache
+C:\Users\Alexb\Desktop\Programming\JS Core\JS-Core\JS Fundamentals\L01 JavaScript Syntax\L01 Qs\Q02 Sum and VAT\bin\Microsoft.NodejsTools.WebRole.dll

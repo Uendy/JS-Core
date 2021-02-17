@@ -1,3 +1,0 @@
-C:\Users\Alexb\Desktop\Programming\JS Core\JS-Core\JS Fundamentals\L01 JavaScript Syntax\L01 Qs\Sum 3 Numbers\obj\Debug\Sum 3 Numbers.njsprojAssemblyReference.cache
-C:\Users\Alexb\Desktop\Programming\JS Core\JS-Core\JS Fundamentals\L01 JavaScript Syntax\L01 Qs\Sum 3 Numbers\obj\Debug\Sum 3 Numbers.njsproj.CoreCompileInputs.cache
-C:\Users\Alexb\Desktop\Programming\JS Core\JS-Core\JS Fundamentals\L01 JavaScript Syntax\L01 Qs\Sum 3 Numbers\bin\Microsoft.NodejsTools.WebRole.dll

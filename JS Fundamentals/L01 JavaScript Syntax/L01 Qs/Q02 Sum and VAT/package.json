@@ -1,7 +1,7 @@
 {
-  "name": "sum-3-numbers",
+  "name": "q02-sum-and-vat",
   "version": "0.0.0",
-  "description": "Sum 3 Numbers",
+  "description": "Q02 Sum and VAT",
   "main": "app.js",
   "author": {
     "name": ""
