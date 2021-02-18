@@ -1,0 +1,2 @@
+C:\Users\Alexb\Desktop\Programming\JS Core\JS-Core\JS Fundamentals\L01 JavaScript Syntax\L01 Qs\Q06 Figure Area\obj\Debug\Q06 Figure Area.njsproj.CoreCompileInputs.cache
+C:\Users\Alexb\Desktop\Programming\JS Core\JS-Core\JS Fundamentals\L01 JavaScript Syntax\L01 Qs\Q06 Figure Area\bin\Microsoft.NodejsTools.WebRole.dll
