@@ -1,0 +1,3 @@
+C:\Users\Alexb\Desktop\Programming\JS Core\JS-Core\JS Fundamentals\L01 JavaScript Syntax\L01 Qs\Q04 Filter by Age\obj\Debug\Q04 Filter by Age.njsprojAssemblyReference.cache
+C:\Users\Alexb\Desktop\Programming\JS Core\JS-Core\JS Fundamentals\L01 JavaScript Syntax\L01 Qs\Q04 Filter by Age\obj\Debug\Q04 Filter by Age.njsproj.CoreCompileInputs.cache
+C:\Users\Alexb\Desktop\Programming\JS Core\JS-Core\JS Fundamentals\L01 JavaScript Syntax\L01 Qs\Q04 Filter by Age\bin\Microsoft.NodejsTools.WebRole.dll

@@ -9,6 +9,8 @@ Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Q02 Sum and VAT", "Q02 Sum 
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Q03 Letter Occurances in String", "Q03 Letter Occurances in String\Q03 Letter Occurances in String.njsproj", "{D98A5734-C8B9-457C-B8C6-023306541666}"
 EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Q04 Filter by Age", "Q04 Filter by Age\Q04 Filter by Age.njsproj", "{D5F1DEA0-EDB3-412E-8886-D9EB7A808D90}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{D98A5734-C8B9-457C-B8C6-023306541666}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D98A5734-C8B9-457C-B8C6-023306541666}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D98A5734-C8B9-457C-B8C6-023306541666}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5F1DEA0-EDB3-412E-8886-D9EB7A808D90}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5F1DEA0-EDB3-412E-8886-D9EB7A808D90}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5F1DEA0-EDB3-412E-8886-D9EB7A808D90}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5F1DEA0-EDB3-412E-8886-D9EB7A808D90}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
