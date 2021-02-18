@@ -1,0 +1,9 @@
+{
+  "name": "q05-string-to-numbers",
+  "version": "0.0.0",
+  "description": "Q05 String to Numbers",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  }
+}
