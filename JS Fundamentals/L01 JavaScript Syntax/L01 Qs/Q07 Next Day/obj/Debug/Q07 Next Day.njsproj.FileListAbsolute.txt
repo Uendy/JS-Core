@@ -1,0 +1,3 @@
+C:\Users\Alexb\Desktop\Programming\JS Core\JS-Core\JS Fundamentals\L01 JavaScript Syntax\L01 Qs\Q07 Next Day\obj\Debug\Q07 Next Day.njsprojAssemblyReference.cache
+C:\Users\Alexb\Desktop\Programming\JS Core\JS-Core\JS Fundamentals\L01 JavaScript Syntax\L01 Qs\Q07 Next Day\obj\Debug\Q07 Next Day.njsproj.CoreCompileInputs.cache
+C:\Users\Alexb\Desktop\Programming\JS Core\JS-Core\JS Fundamentals\L01 JavaScript Syntax\L01 Qs\Q07 Next Day\bin\Microsoft.NodejsTools.WebRole.dll

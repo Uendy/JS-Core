@@ -15,6 +15,8 @@ Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Q05 String to Numbers", "Q0
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Q06 Figure Area", "Q06 Figure Area\Q06 Figure Area.njsproj", "{3F76B205-D57B-4127-9B5D-DC1017479942}"
 EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Q07 Next Day", "Q07 Next Day\Q07 Next Day.njsproj", "{5A12DF06-921A-43FD-A15F-61008B2BCF7F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -45,6 +47,10 @@ Global
 		{3F76B205-D57B-4127-9B5D-DC1017479942}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{3F76B205-D57B-4127-9B5D-DC1017479942}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{3F76B205-D57B-4127-9B5D-DC1017479942}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5A12DF06-921A-43FD-A15F-61008B2BCF7F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5A12DF06-921A-43FD-A15F-61008B2BCF7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5A12DF06-921A-43FD-A15F-61008B2BCF7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5A12DF06-921A-43FD-A15F-61008B2BCF7F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
