@@ -17,6 +17,8 @@ Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Q06 Figure Area", "Q06 Figu
 EndProject
 Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Q07 Next Day", "Q07 Next Day\Q07 Next Day.njsproj", "{5A12DF06-921A-43FD-A15F-61008B2BCF7F}"
 EndProject
+Project("{9092AA53-FB77-4645-B42D-1CCCA6BD08BD}") = "Q08 Distance Between Points", "Q08 Distance Between Points\Q08 Distance Between Points.njsproj", "{C0B50D8D-691C-4160-BCFE-2731A1090690}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -51,6 +53,10 @@ Global
 		{5A12DF06-921A-43FD-A15F-61008B2BCF7F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5A12DF06-921A-43FD-A15F-61008B2BCF7F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5A12DF06-921A-43FD-A15F-61008B2BCF7F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0B50D8D-691C-4160-BCFE-2731A1090690}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0B50D8D-691C-4160-BCFE-2731A1090690}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0B50D8D-691C-4160-BCFE-2731A1090690}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0B50D8D-691C-4160-BCFE-2731A1090690}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
