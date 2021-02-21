@@ -1,0 +1,9 @@
+{
+  "name": "q08-distance-between-points",
+  "version": "0.0.0",
+  "description": "Q08 Distance Between Points",
+  "main": "app.js",
+  "author": {
+    "name": ""
+  }
+}
