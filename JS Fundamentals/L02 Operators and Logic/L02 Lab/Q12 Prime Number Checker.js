@@ -7,4 +7,4 @@ function primeChecker(number) {
     return true;
 }
 
-console.log(primeChecker(6));
+console.log(primeChecker(81));
