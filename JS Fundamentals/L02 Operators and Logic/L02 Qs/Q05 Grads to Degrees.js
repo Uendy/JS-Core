@@ -3,10 +3,9 @@ function calcDegrees(grads) {
 
     let degrees = grads * 0.9;
 
-    let result = degrees % 360;
-    if(result < 0)
+    if(degrees < 0)
     {
-        result = 360 - Math.abs(result);
+        result = 360 + degrees;
     }
     console.log(result);
 }
