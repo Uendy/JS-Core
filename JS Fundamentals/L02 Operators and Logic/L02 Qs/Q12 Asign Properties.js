@@ -9,9 +9,9 @@ function createObject(input) {
     let thirdValue = input[5];
 
     console.log("{");
-    console.log(` ${firstProperty}: ${firstValue},`);
-    console.log(` ${secondProperty}: ${secondValue},`);
-    console.log(` ${thirdProperty}: ${thirdValue}`);
+    console.log(` ${firstProperty}: '${firstValue}',`);
+    console.log(` ${secondProperty}: '${secondValue}',`);
+    console.log(` ${thirdProperty}: '${thirdValue}'`);
     console.log("}");
 
     //let object = {
