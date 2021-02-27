@@ -1,5 +1,5 @@
 function findBiggestNumber(input) {
-    let biggest = Math.max(input);
+    let biggest = Math.max(...input);
     console.log(biggest);
 }
 
