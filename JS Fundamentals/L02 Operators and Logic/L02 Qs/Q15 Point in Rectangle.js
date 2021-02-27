@@ -12,10 +12,10 @@ function checkIfPointIsInRectangle(input) {
     let inY = y >= minY && y <= maxY;
 
     if(inX && inY){
-        console.log("Inside");
+        console.log("inside");
     }
     else{
-        console.log("Outside");
+        console.log("outside");
     }
 }
 
