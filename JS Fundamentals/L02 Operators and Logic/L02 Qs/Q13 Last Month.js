@@ -3,18 +3,14 @@ function getDayOfLastMonth(input) {
     let month = input[1];
     let year = input[2];
 
+    // in case they give us january
     if(month < 1){
         month++;
     }
 
-    let currentMonth = month;
-    let date = new Date(day, month, year);
-    while (month === currentMonth) {
-        date - 1;
-    }
-
-    console.log(date.getDate);
-    console.log(date.getDay);
+    let date = new Date(year, month - 1, 0);
+    let dayCount = date.getDate();
+    console.log(dayCount);
 }
 
 getDayOfLastMonth([17, 3, 2002]);

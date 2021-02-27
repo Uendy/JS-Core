@@ -4,4 +4,4 @@ function printTriangle(count) {
     }
 }
 
-printTriangle(2);
+printTriangle(10);
