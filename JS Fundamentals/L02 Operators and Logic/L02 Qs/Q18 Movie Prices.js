@@ -1,37 +1,39 @@
 function calcTicketPrice(input) {
-    let movieName = input[0];
+    let movie = input[0];
+    let movieName = movie.toLowerCase();
+
     let date = input[1];
     let day = date.toLowerCase();
 
     let price = 0;
 
-    if(movieName === "The Godfather"){
+    if(movieName === "the godfather"){
         switch (day) {
-            case "Monday":
+            case "monday":
                 price = 12;
                 break;
 
-            case "Tuesday":
+            case "tuesday":
                 price = 10;
                 break;
 
-            case "Wednesday":
+            case "wednesday":
                 price = 15;
                 break
 
-            case "Thursday":
+            case "thursday":
                 price = 12.50 ;
                 break;
         
-            case "Friday":
+            case "friday":
                 price = 15;
                 break
 
-            case "Saturday":
+            case "saturday":
                 price = 25;
                 break;
 
-            case "Sunday":
+            case "sunday":
                 price = 30;
                 break;
 
@@ -40,33 +42,33 @@ function calcTicketPrice(input) {
                 break;
         }
     }
-    else if(movieName === "Schindler's List"){
+    else if(movieName === "schindler's list"){
         switch (day) {
-            case "Monday":
+            case "monday":
                 price = 8.50;
                 break;
 
-            case "Tuesday":
+            case "tuesday":
                 price = 8.50;
                 break;
 
-            case "Wednesday":
+            case "wednesday":
                 price = 8.50;
                 break
 
-            case "Thursday":
+            case "thursday":
                 price = 8.50 ;
                 break;
         
-            case "Friday":
+            case "friday":
                 price = 8.50;
                 break
 
-            case "Saturday":
+            case "saturday":
                 price = 15;
                 break;
 
-            case "Sunday":
+            case "sunday":
                 price = 15;
                 break;
 
@@ -75,33 +77,33 @@ function calcTicketPrice(input) {
                 break;
         }
     }
-    else if(movieName === "Casablanca"){
+    else if(movieName === "casablanca"){
         switch (day) {
-            case "Monday":
+            case "monday":
                 price = 8;
                 break;
 
-            case "Tuesday":
+            case "tuesday":
                 price = 8;
                 break;
 
-            case "Wednesday":
+            case "wednesday":
                 price = 8;
                 break
 
-            case "Thursday":
+            case "thursday":
                 price = 8;
                 break;
         
-            case "Friday":
+            case "friday":
                 price = 8;
                 break
 
-            case "Saturday":
+            case "saturday":
                 price = 10;
                 break;
 
-            case "Sunday":
+            case "sunday":
                 price = 10;
                 break;
 
@@ -110,33 +112,33 @@ function calcTicketPrice(input) {
                 break;
         }
     }
-    else if(movieName === "The Wizard of Oz"){
+    else if(movieName === "the wizard of oz"){
         switch (day) {
-            case "Monday":
+            case "monday":
                 price = 10;
                 break;
 
-            case "Tuesday":
+            case "tuesday":
                 price = 10;
                 break;
 
-            case "Wednesday":
+            case "wednesday":
                 price = 10;
                 break
 
-            case "Thursday":
+            case "thursday":
                 price = 10;
                 break;
         
-            case "Friday":
+            case "friday":
                 price = 10;
                 break
 
-            case "Saturday":
+            case "saturday":
                 price = 15;
                 break;
 
-            case "Sunday":
+            case "sunday":
                 price = 15;
                 break;
 
