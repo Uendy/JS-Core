@@ -7,15 +7,15 @@ function createMultiplicationTable(end) {
     let boldPrefix = "<th>";
     let boldPostfix = "</th>"
 
-    for (let row = 1; row <= end; row++) {
+    for (let row = 0; row <= end; row++) {
         let line = " <tr>";
-        for (let col = 1; col <= end; col++) {
-            if(row === 1 && col === 1){
-                line += prefix + "x" + postfix;
+        for (let col = 0; col <= end; col++) {
+            if(row === 0 && col === 0){
+                line += boldPrefix + "x" + boldPostfix;
             }
-            else if(row === 1 || col === 1)
+            else if(row === 0 || col === 0)
             {
-                line += "<th>" + `${row * col}` + "</th>"                
+                line += boldPrefix + `${row + col}` + boldPostfix;                
             }
             else{
                 line += prefix + (row * col) + postfix;
