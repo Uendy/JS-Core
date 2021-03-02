@@ -1,9 +1,9 @@
 function calc(a, b, op) {
 
-    let add = function (a, b) { console.log(a + b)};
-    let subtract = function(a, b) {console.log(a - b)};
-    let multiply = function (a, b) { console.log(a * b)};
-    let divide = function(a, b) {console.log(a / b)};
+    let add = (a, b) => console.log(a + b);
+    let subtract = (a, b) => console.log(a - b);
+    let multiply = (a, b) => console.log(a * b);
+    let divide = (a, b) => console.log(a / b);
 
     switch (op) {
         case "+": 
