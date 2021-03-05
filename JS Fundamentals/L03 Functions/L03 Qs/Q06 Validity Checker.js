@@ -26,3 +26,4 @@ function checkPoint(input) {
 }
 
 checkPoint([3, 0, 0, 4]);
+checkPoint([2, 1, 1, 1]);
