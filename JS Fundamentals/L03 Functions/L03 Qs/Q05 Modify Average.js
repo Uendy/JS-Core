@@ -1,5 +1,4 @@
 function modifyAverage(number) {
-    
     function getAverage(number) {
         let sum = 0;
         let numAsString = number.toString().split('');
