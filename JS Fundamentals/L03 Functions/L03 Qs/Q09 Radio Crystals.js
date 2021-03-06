@@ -21,7 +21,7 @@ function tuneCrystal(input) {
     }
 
     function xRay(currentFreq) {
-        return currentFreq++;
+        return currentFreq += 1;
     }
 
     function transport(currentFreq) {
@@ -72,7 +72,7 @@ function tuneCrystal(input) {
     if(desiredFreq === currentFreq + 1){
         currentFreq = xRay(currentFreq);
         console.log("X-ray x1")
-        transport(currentFreq);
+        //transport(currentFreq);
     }
 
     console.log(`Finished crystal ${currentFreq} microns`);
