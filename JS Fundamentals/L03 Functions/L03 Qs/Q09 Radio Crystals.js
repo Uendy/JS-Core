@@ -38,7 +38,7 @@ function tuneCrystal(input) {
         }
         if (cuts !== 0) {
             console.log("Cut x" + cuts);
-            transport(currentFreq);
+            currentFreq = transport(currentFreq);
         }
 
         let laps = 0;
@@ -48,7 +48,7 @@ function tuneCrystal(input) {
         }
         if (laps !== 0) {
             console.log("Lap x" + laps);
-            transport(currentFreq);
+            currentFreq = transport(currentFreq);
         }
 
         let grinds = 0;
@@ -58,17 +58,17 @@ function tuneCrystal(input) {
         }
         if (grinds !== 0) {
             console.log("Grind x" + grinds);
-            transport(currentFreq);
+            currentFreq = transport(currentFreq);
         }
 
         let etches = 0;
-        while (desiredFreq <= currentFreq) {
+        while (desiredFreq < currentFreq) {
             currentFreq = etch(currentFreq);
             etches++;
         }
         if (etches !== 0) {
             console.log("Etch x" + etches);
-            transport(currentFreq);
+            currentFreq = transport(currentFreq);
         }
 
         if (desiredFreq === currentFreq + 1) {
@@ -80,5 +80,5 @@ function tuneCrystal(input) {
     }
 }
 
-tuneCrystal(1000, 4000, 8100);
-//tuneCrystal([1375, 50000]);
+tuneCrystal([1000, 4000, 8100]);
+tuneCrystal([1375, 50000]);
