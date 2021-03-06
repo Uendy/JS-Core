@@ -53,5 +53,5 @@ function locateTreasure(input) {
     }
 }
 
-//locateTreasure([4, 2, 1.5, 6.5, 1, 3]);
+locateTreasure([4, 2, 1.5, 6.5, 1, 3]);
 locateTreasure([6, 4]);
