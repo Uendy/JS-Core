@@ -1,35 +1,36 @@
 function tuneCrystal(input) {
     let desiredFreq = input[0];
+    function cut(currentFreq) {
+        return currentFreq / 4;
+    }
 
+    function lap(currentFreq) {
+        return currentFreq * 0.8;
+    }
+
+    function grind(currentFreq) {
+        return currentFreq -= 20;
+    }
+
+    function etch(currentFreq) {
+        return currentFreq -= 2;
+    }
+
+    function xRay(currentFreq) {
+        return currentFreq += 1;
+    }
+
+    function transport(currentFreq) {
+        console.log("Transporting and washing");
+        return Math.floor(currentFreq);
+    }
+    
     for (let i = 1; i < input.length; i++) {
         let currentFreq = input[i];
 
         console.log(`Processing chunk ${currentFreq} microns`);
 
-        function cut(currentFreq) {
-            return currentFreq / 4;
-        }
-
-        function lap(currentFreq) {
-            return currentFreq * 0.8;
-        }
-
-        function grind(currentFreq) {
-            return currentFreq -= 20;
-        }
-
-        function etch(currentFreq) {
-            return currentFreq -= 2;
-        }
-
-        function xRay(currentFreq) {
-            return currentFreq += 1;
-        }
-
-        function transport(currentFreq) {
-            console.log("Transporting and washing");
-            return Math.floor(currentFreq);
-        }
+        
 
         let cuts = 0;
         while (desiredFreq <= currentFreq / 4) {
