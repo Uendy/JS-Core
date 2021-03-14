@@ -1,7 +1,4 @@
-function printSpiralMatrix(size) {
-    let rows = size[0];
-    let cols = size[1];
-
+function printSpiralMatrix(rows, cols) {
     let result = [];
     for (let i = 0; i < rows; i++) {
         result.push([]);
@@ -51,4 +48,4 @@ function printSpiralMatrix(size) {
     }
 }
 
-printSpiralMatrix([5, 5]);
+printSpiralMatrix(5, 5);
