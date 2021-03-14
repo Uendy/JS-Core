@@ -36,16 +36,19 @@ function printSpiralMatrix(size) {
         endRow--;
         
         // left
-        for (let i = endRow; i >= startCol; i--) {
+        for (let i = endRow; i >= startRow; i--) {
             result[i][startCol] = counter;
             counter++;
         }
         startCol++;
     }
-
-    result.forEach(row => {
-        console.log(result.join(" "));
-    });
+    for (let row = 0; row < rows; row++) {
+        let currentRow = "";
+        for (let col = 0; col < cols; col++) {
+            currentRow += result[row][col] + " ";
+        }
+        console.log(currentRow);
+    }
 }
 
 printSpiralMatrix([5, 5]);
