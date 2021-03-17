@@ -1,8 +1,7 @@
 function escapeText(input) {
-    function escapeChars(input) {
-        return input.replace((/</g), "&lt;")
+    function escapeChars(line) {
+        return line.replace(/</g, "&lt;")
             .replace(/>/g, "&gt;")
-            .replace(/&/g, "&quot;")
             .replace(/'/g, "&#39;");
     }
 
@@ -15,4 +14,4 @@ function escapeText(input) {
     console.log(output.join("\n"));
 }
 
-escapeText(['<b>unescaped text</b>', 'normal text']);
+escapeText(["<b>unescaped text</b>", "normal text"]);
