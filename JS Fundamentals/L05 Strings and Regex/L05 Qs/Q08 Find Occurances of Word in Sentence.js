@@ -1,7 +1,14 @@
 function findOccurancesOfWord(input, word) {
-    let pattern = /(${word})\b/gmi;
+    let patternString = '\\b' + `${word}` + '\\b';
+    let pattern = new RegExp(patternString, 'gi');
+
     let matches = input.match(pattern);
-    console.log(matches.length);
+    if(!matches){
+        console.log(0);
+    }
+    else{
+        console.log(matches.length);
+    }
 }
 
 findOccurancesOfWord("The waterfall was so high, that the child couldn’t see its peak." , "the");
