@@ -1,37 +1,24 @@
 function getLowestPrices(input) {
-    let result = {};
+    let products = new Map();
     
-    let pattern = /\s*\|\s*/gm;
-    input.forEach(input => {
-        let [town, product, price] = input.split(pattern);
-        
-        let found = false;
-        for (let city in result) {
-            let currentTown = result[city];
-            if(currentTown[product] !== undefined){
-                if(currentTown[product] > price){
-                    result[city][product] = price;
-                }
-                found = true;
-                break;
+    for (let priceList of input) {
+        let [town, product, price] = priceList.split(/\s+\|\s+/g);
+        if (!products.has(product))
+            products.set(product, new Map());
+        products.get(product).set(town, Number(price));
+    }
+
+    for (let [product, towns] of products) {
+        let minPrice = Number.MAX_VALUE;
+        let minPriceTown = '';
+        for (let [town, price] of towns) {
+            if (price < minPrice) {
+                minPrice = price;
+                minPriceTown = town;
             }
         }
 
-        if(found === false){
-            if(result[town] === undefined){
-                result[town] = {};
-            }
-            if(result[town][product] === undefined){
-                result[town][product] = {};
-            }
-            result[town][product] = price;
-        }
-    });
-
-    for (let town in result) {
-        for (let product in result[town]) {
-            console.log(`${product} -> ${result[town][product]} (${town})`);
-        }
+        console.log(`${product} -> ${minPrice} (${minPriceTown})`);
     }
 }
 
