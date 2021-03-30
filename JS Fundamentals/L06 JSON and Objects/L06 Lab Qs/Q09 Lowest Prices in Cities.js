@@ -6,8 +6,9 @@ function getLowestPrices(input) {
         let [town, product, price] = input.split(pattern);
         
         let found = false;
-        for (let city in result.keys) {
-            if(currentTown[product] === undefined){
+        for (let city in result) {
+            let currentTown = result[city];
+            if(currentTown[product] !== undefined){
                 if(currentTown[product] > price){
                     result[city][product] = price;
                 }
@@ -20,7 +21,7 @@ function getLowestPrices(input) {
             if(result[town] === undefined){
                 result[town] = {};
             }
-            if(result[town][prodcut] === undefined){
+            if(result[town][product] === undefined){
                 result[town][product] = {};
             }
             result[town][product] = price;
