@@ -1,21 +1,12 @@
 let canvas = document.getElementById("can");
-let ctx = canvas.getContext("2d");
-
-// The main game loop
-var main = function () {
-	update();
-	render();
-
-	// Request to do this again ASAP
-	requestAnimationFrame(main);
-};
+var ctx = canvas.getContext("2d");
 
 // Get background 
-let bgReady = false;
+let backgroundReady = false;
 let background = new Image();
 
 background.addEventListener("load", function(){
-    bgready = true;
+    backgroundReady = true;
 });
 
 background.src = "./Images/background.png";
@@ -25,7 +16,7 @@ let heroReady = false;
 let heroSprite = new Image();
 
 heroSprite.addEventListener("load", function(){
-    heroSprite = true;
+    heroReady = true;
 });
 
 heroSprite.src = "./Images/hero.png";
@@ -42,7 +33,7 @@ monsterSprite.src = "./Images/monster.png";
 
 // Game objects
 let hero = {
-	speed: 100, // movement in pixels per second
+	speed: 5, // movement in pixels per second
 	x: 0,
 	y: 0
 };
@@ -88,6 +79,22 @@ let update = function () {
 		hero.x += hero.speed;
 	}
 
+    if(hero.y < 0){
+        hero.y = 460;
+    }
+
+    if(hero.y > 460){
+        hero.y = 10;
+    }
+
+    if(hero.x < 0){
+        hero.x = 500;
+    }
+
+    if(hero.x > 500){
+        hero.x = 0;
+    }
+
 	// Are they touching?
 	if (
 		hero.x <= (monster.x + 32)
@@ -102,16 +109,16 @@ let update = function () {
 
 // Draw everything
 let render = function () {
-	if (bgReady) {
-		ctx.drawImage(bgImage, 0, 0);
+	if (backgroundReady) {
+		ctx.drawImage(background, 0, 0);
 	}
 
 	if (heroReady) {
-		ctx.drawImage(heroImage, hero.x, hero.y);
+		ctx.drawImage(heroSprite, hero.x, hero.y);
 	}
 
 	if (monsterReady) {
-		ctx.drawImage(monsterImage, monster.x, monster.y);
+		ctx.drawImage(monsterSprite, monster.x, monster.y);
 	}
 
 	// Score
@@ -119,5 +126,22 @@ let render = function () {
 	ctx.font = "24px Helvetica";
 	ctx.textAlign = "left";
 	ctx.textBaseline = "top";
-	ctx.fillText("Monsterrs caught: " + monstersCaught, 32, 32);
+	ctx.fillText("Monster's caught: " + monstersCaught, 32, 32);
 };
+
+// The main game loop
+let main = function () {
+	update();
+	render();
+
+	// Request to do this again ASAP
+	requestAnimationFrame(main);
+};
+
+// Cross-browser support for requestAnimationFrame
+let w = window;
+requestAnimationFrame = w.requestAnimationFrame || w.webkitRequestAnimationFrame || w.msRequestAnimationFrame || w.mozRequestAnimationFrame;
+
+// Let's play this game!
+reset();
+main();
