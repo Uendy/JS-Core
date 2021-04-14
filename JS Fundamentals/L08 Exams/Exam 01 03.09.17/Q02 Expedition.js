@@ -6,7 +6,7 @@ function findPath(primary, secondary, coordinates, start) {
 
         for (let row = x; row < primary.length && row < secondary[0].length; row++) {
             let currentRow = primary[row];
-            for (let col = y; col < currentRow.length && col < secondary.length; col++) {
+            for (let col = y; col < currentRow.length && col < secondary[0].length; col++) { 
                 let secondRow = row - x;
                 let secondCol = col - y;
 
@@ -116,13 +116,13 @@ function findPath(primary, secondary, coordinates, start) {
 
     function lookForPath(x, y, primary) {
         // down: 
-        let downX = x - 1;
+        let downX = x + 1;
         if(primary[downX][y] === 0){
             return "down";
         }
 
         // up: 
-        let upX = x + 1;
+        let upX = x - 1;
         if(primary[upX][y] === 0){
             return "up";
         }
