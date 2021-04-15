@@ -87,8 +87,8 @@ function findPath(primary, secondary, coordinates, start) {
                 console.log(steps);
 
                 // find quadrant:
-                let halfHeight = primary[0].length / 2;
-                let halfWidth = primary.length / 2;
+                let halfWidth = primary[0].length / 2;
+                let halfHeight = primary.length / 2;
                 // 1 (top right)
                 if(currentX < halfHeight && currentY >= halfWidth){
                     console.log("Dead end 1");
