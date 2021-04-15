@@ -6,7 +6,7 @@ function findPath(primary, secondary, coordinates, start) {
 
         for (let row = x; row < primary.length && row - x < secondary.length; row++) {
             let currentRow = primary[row];
-            for (let col = y; col < currentRow.length && col - y < secondary.length; col++) { 
+            for (let col = y; col < currentRow.length && col - y < secondary[0].length; col++) { 
                 let secondRow = row - x;
                 let secondCol = col - y;
 
@@ -202,7 +202,7 @@ findPath(
     ],
     [0, 2]
 );
- 
+
 findPath(
     [
         [1, 1, 0, 1],
@@ -223,4 +223,22 @@ findPath(
     ],
     [2, 0]
 );
-findPath(secondTest);
+
+findPath(
+    [
+        [0, 1, 0, 0, 0, 0],
+        [0, 1, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0],
+        [0, 0, 0, 0, 0, 0]
+    ],
+    [
+        [1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1],
+        [1, 1, 1, 1, 1, 1]
+    ],
+    [
+        [0,0]
+    ], 
+    [0, 1]
+);
