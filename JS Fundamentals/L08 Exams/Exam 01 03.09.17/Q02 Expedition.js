@@ -4,9 +4,9 @@ function findPath(primary, secondary, coordinates, start) {
         let x = layOvers[0];
         let y = layOvers[1];
 
-        for (let row = x; row < primary.length && row < secondary[0].length; row++) {
+        for (let row = x; row < primary.length && row - x < secondary.length; row++) {
             let currentRow = primary[row];
-            for (let col = y; col < currentRow.length && col < secondary[0].length; col++) { 
+            for (let col = y; col < currentRow.length && col - y < secondary.length; col++) { 
                 let secondRow = row - x;
                 let secondCol = col - y;
 
