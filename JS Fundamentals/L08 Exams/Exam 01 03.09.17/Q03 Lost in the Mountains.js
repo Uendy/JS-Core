@@ -1,5 +1,16 @@
 function decypherCode(keyword, text) {
     
+    let firstKeyWordIndex = text.indexOf(keyword);
+    let secondKeyWordIndex = text.indexOf(keyword, firstKeyWordIndex + 1);
+
+    // get the message
+    let message = text.substring(firstKeyWordIndex, secondKeyWordIndex);
+    console.log(message);
+
+    // remove secret text
+    text = text.replace(message, "");
+
+    // move onto finding the coordinates
 }
 
 decypherCode("<>",
