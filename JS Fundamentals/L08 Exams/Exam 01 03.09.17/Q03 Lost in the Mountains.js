@@ -4,8 +4,7 @@ function decypherCode(keyword, text) {
     let secondKeyWordIndex = text.indexOf(keyword, firstKeyWordIndex + 1);
 
     // get the message
-    let message = text.substring(firstKeyWordIndex, secondKeyWordIndex);
-    console.log(message);
+    let message = text.substring(firstKeyWordIndex + keyword.length, secondKeyWordIndex);
 
     // remove secret text
     text = text.replace(message, "");
@@ -13,6 +12,23 @@ function decypherCode(keyword, text) {
     // move onto finding the coordinates
     let pattern = /(north|east)\D*(\d{2})[^\,]*\D*(,{1})\D*(\d{6})/gmi;
     let match = pattern.exec(text);
+
+    let lattitude;
+    let longitude;
+
+    while (match) {
+        if(match[1].toLocaleLowerCase() === "north"){
+            lattitude = `${match[2]}.${match[4]} N`;
+        }
+        else if(match[1].toLocaleLowerCase() === "east"){
+            longitude = `${match[2]}.${match[4]} E`;
+        }
+        match = pattern.exec(text);
+    }
+
+    console.log(lattitude);
+    console.log(longitude);
+    console.log(`Message: ${message}`);
 }
 
 decypherCode("<>",
