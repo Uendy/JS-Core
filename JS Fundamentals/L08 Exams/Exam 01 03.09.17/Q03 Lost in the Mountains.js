@@ -11,6 +11,8 @@ function decypherCode(keyword, text) {
     text = text.replace(message, "");
 
     // move onto finding the coordinates
+    let pattern = /(north|east)\D*(\d{2})[^\,]*\D*(,{1})\D*(\d{6})/gmi;
+    let match = pattern.exec(text);
 }
 
 decypherCode("<>",
