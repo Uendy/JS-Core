@@ -10,10 +10,10 @@ function sortRooms(rooms, guests) {
         let currentRoomSpread = room.type;
 
         if(currentRoomSpread === "double-bedded"){
-            hotel.set(currentRoomNumber, [2]);
+            hotel.set(currentRoomNumber, Array(2));
         }
         else{
-            hotel.set(currentRoomNumber, [3]);
+            hotel.set(currentRoomNumber, Array(3));
         }
     }
 
@@ -35,7 +35,17 @@ function sortRooms(rooms, guests) {
         //•	If the couple is a male and a female, they must be accommodated in the first free double room;
         //•	If the couple is of two people of the same gender, they should be accommodated in a triple room;
         //•	If there is free space in a triple room, it must be filled by a guest or guests of the same gender as the one already staying in the room;
-
+        
+        if(firstPersonGender !== secondPersonGender){
+            // check for free double rooms:
+            for (let [number, occupancy] of hotel) {
+                if(occupancy.length === 2){
+                    if(occupancy === undefined){
+                        console.log("yes");
+                    }
+                }
+            }
+        }
     }
     
 
