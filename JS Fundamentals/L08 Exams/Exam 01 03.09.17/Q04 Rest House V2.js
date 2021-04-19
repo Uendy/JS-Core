@@ -28,19 +28,17 @@ function sortRooms(rooms, guests) {
         if(firstPerson.gender !== secondPerson.gender){
             //Object.keys(obj).length
             let doubles = Object.keys(hotel).filter(x => Object.keys(hotel[x]).length === 2);
-            doubles.forEach(double => {
-                let currentRoom = hotel[double];
-                if(currentRoom[firstGuest === "empty"])
-                if(double.firstGuest.name === empty){
-                    hotel[double][firstGuest].name = firstPerson.name;
-                    hotel[double][firstGuest][age] = firstPerson.age;
+            for (let double of doubles) {
+                if(hotel[double].firstGuest.name === "empty"){
+                    hotel[double].firstGuest.name = firstPerson.name;
+                    hotel[double].firstGuest.age = firstPerson.age;
 
-                    hotel[double][secondGuest].name = secondPerson.name;
-                    hotel[double][secondGuest][age] = secondPerson.age;
-                    //break;
+                    hotel[double].secondGuest.name = secondPerson.name;
+                    hotel[double].secondGuest.age = secondPerson.age;
+                    break;
                 }
                 // nothing is said about a two different sex couples if there are no free doubles
-            });
+            }
         }
     }
 }
