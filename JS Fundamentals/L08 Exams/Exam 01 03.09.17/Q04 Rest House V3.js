@@ -35,7 +35,7 @@ function assignRooms(rooms, couples) {
         
         if(firstPerson.gender !== secondPerson.gender){
             let accommodated = false;
-            for (let room of doubles.keys()){
+            for (let room in doubles){
                 hotel[room].firstGuest = firstPerson;
                 hotel[room].secondGuest = secondPerson;
                 accommodated = true;
@@ -51,8 +51,8 @@ function assignRooms(rooms, couples) {
             let firstAccomadated = false;
             let secondAccomadated = false;
 
-            for (let room of triples){
-                let spaces = room.freeBeds;
+            for (let room in triples){
+                let spaces = triples[room].freeBeds;
                 if(spaces === 3){
                     hotel[room].firstGuest = firstPerson;
                     hotel[room].secondGuest = secondPerson;
@@ -60,7 +60,7 @@ function assignRooms(rooms, couples) {
                     firstAccomadated = true;
                     secondAccomadated = true;
 
-                    triples[room] = 1;
+                    triples[room].freeBeds = 1;
                     break;
                 }
                 else if(spaces === 2){
@@ -78,7 +78,7 @@ function assignRooms(rooms, couples) {
                     firstAccomadated = true;
                     delete triples[room];
 
-                    for (let remainingTriples of triples) {
+                    for (let remainingTriples in triples) {
                         hotel[remainingTriples].thirdGuest = secondPerson;
                         delete triples[remainingTriples];
                         secondAccomadated = true;
