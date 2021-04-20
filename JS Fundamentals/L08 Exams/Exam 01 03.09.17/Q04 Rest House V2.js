@@ -26,18 +26,53 @@ function sortRooms(rooms, guests) {
         let secondPerson = couple.second;
 
         if(firstPerson.gender !== secondPerson.gender){
-            //Object.keys(obj).length
             let doubles = Object.keys(hotel).filter(x => Object.keys(hotel[x]).length === 2);
             for (let double of doubles) {
                 if(hotel[double].firstGuest.name === "empty"){
-                    hotel[double].firstGuest.name = firstPerson.name;
-                    hotel[double].firstGuest.age = firstPerson.age;
+                    hotel[double].firstGuest = firstPerson;
+                    //hotel[double].firstGuest.name = firstPerson.name;
+                    //hotel[double].firstGuest.age = firstPerson.age;
 
-                    hotel[double].secondGuest.name = secondPerson.name;
-                    hotel[double].secondGuest.age = secondPerson.age;
+                    hotel[double].secondGuest = secondPerson;
+                    //hotel[double].secondGuest.name = secondPerson.name;
+                    //hotel[double].secondGuest.age = secondPerson.age;
                     break;
                 }
                 // nothing is said about a two different sex couples if there are no free doubles
+            }
+        }
+        else{
+            // different genders:
+            let triples = Object.keys(hotel).filter(x => Object.keys(hotel[x].length === 3));
+            for (let triple of triples) {
+                let anyEmpty = hotel[triple].some(x => x.name === "empty");
+                if(anyEmpty !== 0){
+                    let firstEmpty = hotel[triple].firstGuest.name === "empty";
+                    let secondEmpty = hotel[triple].secondGuest.name === "empty";
+                    let thirdEmpty = hotel[triple].thirdGuest.name === "empty";
+                    
+                    if(firstEmpty === true){
+                        hotel[triple].firstGuest = firstPerson;
+                        hotel[triple].secondGuest = secondPerson;
+                        break;
+                    }
+                    else if(secondEmpty === true){
+                        hotel[triple].secondGuest = firstPerson;
+                        hotel[triple].thirdGuest = secondPerson;
+                        break;
+                    }
+                    else{
+                        hotel[triple].thirdGuest = firstPerson;
+                        
+                        // find a room for the 2nd person
+
+
+                    }
+
+                }
+                else{
+                    teahouse += 2;
+                }
             }
         }
     }
