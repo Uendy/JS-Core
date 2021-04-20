@@ -26,7 +26,7 @@ function sortRooms(rooms, guests) {
         let secondPerson = couple.second;
 
         if(firstPerson.gender !== secondPerson.gender){
-            let doubles = Object.keys(hotel).filter(x => Object.keys(hotel[x]).length === 2);
+            let doubles = Object.keys(hotel).filter(x => Object.values(Object.keys(hotel[x])).values.length === 2);
             for (let double of doubles) {
                 if(hotel[double].firstGuest.name === "empty"){
                     hotel[double].firstGuest = firstPerson;
@@ -43,7 +43,7 @@ function sortRooms(rooms, guests) {
         }
         else{
             // different genders:
-            let triples = Object.keys(hotel).filter(x => Object.keys(hotel[x].length === 3));
+            let triples = Object.keys(hotel).filter(x => Object.values(Object.keys(hotel[x])).length === 3);
             for (let triple of triples) {
                 let anyEmpty = hotel[triple].some(x => x.name === "empty");
                 if(anyEmpty !== 0){
