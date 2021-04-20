@@ -95,6 +95,29 @@ function assignRooms(rooms, couples) {
             }
         }
     }
+
+    // Sort rooms by ascending order:
+    let sortedRooms = Object.keys(hotel).sort((a, b) => order(a,b));
+
+    for (let room of sortedRooms) {
+        //console.log(`Room number: ${room}`);
+        
+        let currentRoom = hotel[room];
+        //let sortedGuests = Object.keys(currentRoom).sort((a.name, b.name) => order(a));
+    }
+
+    function order(a, b) {
+        // You need to order them by their length, in ascending order, as first criteria, 
+        if(a.length < b.length){
+            return -1;
+        }
+        if(a.length > b.length){
+            return 1;
+        }
+        
+        // and by alphabetical order as second criteria. 
+        return a.localeCompare(b);
+    }
 }
 
 assignRooms(
