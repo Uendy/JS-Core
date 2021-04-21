@@ -79,6 +79,7 @@ function assignRooms(rooms, couples) {
                     delete triples[room];
 
                     for (let remainingTriples in triples) {
+                        // this could be an empty room so I need to check which place I put him in and not just shove him in third
                         hotel[remainingTriples].thirdGuest = secondPerson;
                         delete triples[remainingTriples];
                         secondAccomadated = true;
@@ -107,10 +108,34 @@ function assignRooms(rooms, couples) {
 
         sortedGuests.forEach(guest => {
             let currentGuest = hotel[room][guest];
-            console.log(`--Guest Name: ${currentGuest.name}`);
-            console.log(`--Guest Age: ${currentGuest.age}`);
+            if(currentGuest.name === "empty"){
+                // remove the empty guest and free a bed
+                if(room in doubles){
+                    doubles[room] += 1;
+                }
+                else if(room in triples){
+                    triples[room] += 1;
+                }
+            }
+            else{
+                console.log(`--Guest Name: ${currentGuest.name}`);
+                console.log(`--Guest Age: ${currentGuest.age}`);
+            }
         });
+
+        // find empty beds:
+        if(room in doubles){
+            console.log(`Empty beds in the room: ${doubles[room]}`);
+        }
+        else if(room in triples){
+            console.log(`Empty beds in the room: ${triples[room]}`);
+        }
+        else{
+            console.log("Empty beds in the room: 0");
+        }
     }
+
+    console.log(`Guests moved to the tea house: ${teahouse}`);
 
     function order(a, b) {
         return a.localeCompare(b);
