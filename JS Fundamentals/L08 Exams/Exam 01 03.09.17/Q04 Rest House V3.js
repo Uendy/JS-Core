@@ -51,6 +51,7 @@ function assignRooms(rooms, couples) {
             let firstAccomadated = false;
             let secondAccomadated = false;
 
+            
             for (let room in triples){
                 let spaces = triples[room].freeBeds;
                 if(spaces === 3){
@@ -64,26 +65,55 @@ function assignRooms(rooms, couples) {
                     break;
                 }
                 else if(spaces === 2){
-                    hotel[room].secondGuest = firstPerson;
-                    hotel[room].thirdGuest = secondPerson;
+                    // need to check if they are the same gender
+                    if(hotel[room].firstGuest.gender === firstGuest.gender){
+                        hotel[room].secondGuest = firstPerson;
+                        hotel[room].thirdGuest = secondPerson;
 
-                    firstAccomadated = true;
-                    secondAccomadated = true;
+                        firstAccomadated = true;
+                        secondAccomadated = true;
 
-                    delete triples[room];
-                    break;
+                        delete triples[room];
+                        break;
+                    }
+                    else{
+                        continue;
+                    }
                 }
                 else{
-                    hotel[room].thirdGuest = firstPerson;
-                    firstAccomadated = true;
-                    delete triples[room];
+                    if(hotel[room].firstGuest.gender === firstPerson.gender){
+                        hotel[room].thirdGuest = firstPerson;
+                        firstAccomadated = true;
+                        delete triples[room];
 
-                    for (let remainingTriples in triples) {
-                        // this could be an empty room so I need to check which place I put him in and not just shove him in third
-                        hotel[remainingTriples].thirdGuest = secondPerson;
-                        delete triples[remainingTriples];
-                        secondAccomadated = true;
-                        break;
+                        for (let remainingTriples in triples) {
+                            // this could be an empty room so I need to check which place I put him in and not just shove him in third
+                            if(hotel[remainingTriples].firstGuest.name === "empty"){
+                                hotel[remainingTriples].firstGuest = secondPerson;
+                                triples[remainingTriples] -= 1;
+                                secondAccomadated = true;
+                                break;
+                            }
+                            else if(hotel[remainingTriples].secondGuest.name === "empty"){
+                                if(hotel[remainingTriples].firstGuest.gender === secondPerson.gender){
+                                    hotel[remainingTriples].secondGuest = secondPerson;
+                                    triples[remainingTriples] -= 1;
+                                    secondAccomadated = true;
+                                    break;
+                                }
+                            }
+                            else if(hotel[remainingTriples].thirdGuest.name === "empty"){
+                                if(hotel[remainingTriples].firstGuest.gender === secondPerson.gender){
+                                    hotel[remainingTriples].thirdGuest = secondPerson;
+                                    delete triples[remainingTriples];
+                                    secondAccomadated = true;
+                                    break;
+                                }
+                            }
+                        }
+                    }
+                    else{
+                        continue;
                     }
                 }
             }
