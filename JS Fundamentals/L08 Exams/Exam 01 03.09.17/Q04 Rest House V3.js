@@ -108,16 +108,7 @@ function assignRooms(rooms, couples) {
 
         sortedGuests.forEach(guest => {
             let currentGuest = hotel[room][guest];
-            if(currentGuest.name === "empty"){
-                // remove the empty guest and free a bed
-                if(room in doubles){
-                    doubles[room] += 1;
-                }
-                else if(room in triples){
-                    triples[room] += 1;
-                }
-            }
-            else{
+            if(currentGuest.name !== "empty"){
                 console.log(`--Guest Name: ${currentGuest.name}`);
                 console.log(`--Guest Age: ${currentGuest.age}`);
             }
@@ -125,10 +116,10 @@ function assignRooms(rooms, couples) {
 
         // find empty beds:
         if(room in doubles){
-            console.log(`Empty beds in the room: ${doubles[room]}`);
+            console.log(`Empty beds in the room: ${doubles[room].freeBeds}`);
         }
         else if(room in triples){
-            console.log(`Empty beds in the room: ${triples[room]}`);
+            console.log(`Empty beds in the room: ${triples[room].freeBeds}`);
         }
         else{
             console.log("Empty beds in the room: 0");
@@ -141,6 +132,34 @@ function assignRooms(rooms, couples) {
         return a.localeCompare(b);
     }
 }
+
+assignRooms(
+[ 
+    { number: '101A', type: 'double-bedded' },
+    { number: '104', type: 'triple' },
+    { number: '101B', type: 'double-bedded' },
+    { number: '102', type: 'triple' } 
+],
+[ 
+    { 
+        first: { name: 'Sushi & Chicken', gender: 'female', age: 15 }, 
+        second: { name: 'Salisa Debelisa', gender: 'female', age: 25 } 
+    },
+    { 
+        first: { name: 'Daenerys Targaryen', gender: 'female', age: 20 }, 
+        second: { name: 'Jeko Snejev', gender: 'male', age: 18 } 
+    },
+    { 
+        first: { name: 'Pesho Goshov', gender: 'male', age: 20 }, 
+        second: { name: 'Gosho Peshov', gender: 'male', age: 18 } 
+    },    
+    { 
+        first: { name: 'Conor McGregor', gender: 'male', age: 29 }, 
+        second: { name: 'Floyd Mayweather', gender: 'male', age: 40 } 
+    } 
+]
+
+);
 
 assignRooms(
     [
