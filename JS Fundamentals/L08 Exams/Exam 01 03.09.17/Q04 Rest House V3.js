@@ -61,6 +61,11 @@ function assignRooms(rooms, couples) {
 
             
             for (let room in triplesOrder){
+
+                if(firstAccomadated && secondAccomadated){
+                    break;
+                }
+
                 let roomNumber = triplesOrder[room];
                 let spaces = triples[roomNumber].freeBeds;
                 if(spaces === 3){
@@ -75,7 +80,7 @@ function assignRooms(rooms, couples) {
                 }
                 else if(spaces === 2){
                     // need to check if they are the same gender
-                    if(hotel[roomNumber].firstGuest.gender === firstGuest.gender){
+                    if(hotel[roomNumber].firstGuest.gender === firstPerson.gender){
                         hotel[roomNumber].secondGuest = firstPerson;
                         hotel[roomNumber].thirdGuest = secondPerson;
 
@@ -102,14 +107,14 @@ function assignRooms(rooms, couples) {
                             // this could be an empty room so I need to check which place I put him in and not just shove him in third
                             if(hotel[remainingTriplesNumber].firstGuest.name === "empty"){
                                 hotel[remainingTriplesNumber].firstGuest = secondPerson;
-                                triples[remainingTriplesNumber] -= 1;
+                                triples[remainingTriplesNumber].freeBeds = 2;
                                 secondAccomadated = true;
                                 break;
                             }
                             else if(hotel[remainingTriplesNumber].secondGuest.name === "empty"){
                                 if(hotel[remainingTriplesNumber].firstGuest.gender === secondPerson.gender){
                                     hotel[remainingTriplesNumber].secondGuest = secondPerson;
-                                    triples[remainingTriplesNumber] -= 1;
+                                    triples[remainingTriplesNumber].freeBeds = 1;
                                     secondAccomadated = true;
                                     break;
                                 }
@@ -175,6 +180,37 @@ function assignRooms(rooms, couples) {
         return a.localeCompare(b);
     }
 }
+
+assignRooms(
+[
+    {"number":"428","type":"triple"},
+    {"number":"161","type":"triple"},
+    {"number":"242","type":"double-bedded"},
+    {"number":"537","type":"triple"}
+],
+[
+    {
+    "first":{"name":"Nina Diaz","gender":"female","age":29},
+    "second":{"name":"Carol Hansen","gender":"female","age":6}
+    },
+    {
+    "first":{"name":"Georgia Thomas","gender":"female","age":38},
+    "second":{"name":"Freddie Harmon","gender":"male","age":46}
+    },
+    {
+    "first":{"name":"Freddie Harmon","gender":"male","age":30},
+    "second":{"name":"Jesus Terry","gender":"male","age":64}
+    },
+    {
+    "first":{"name":"Tracy Reid","gender":"male","age":41},
+    "second":{"name":"Jordan Garner","gender":"male","age":16}
+    },
+    {
+    "first":{"name":"Kara Burns","gender":"female","age":7},
+    "second":{"name":"Marjorie Butler","gender":"female","age":28}
+    }
+]
+);
 
 assignRooms(
 [ 
