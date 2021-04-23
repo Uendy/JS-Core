@@ -28,12 +28,12 @@ function calculatePyramidMaterials(base,  incrament) {
     }
 
     // round and print:
-    console.log(`Stone required: ${Math.round(stone)}`);
-    console.log(`Marble required: ${Math.round(marble)}`);
-    console.log(`Lapis Lazuli required: ${Math.round(lapis)}`);
-    console.log(`Gold required: ${Math.round(gold)}`);
+    console.log(`Stone required: ${Math.ceil(stone)}`);
+    console.log(`Marble required: ${Math.ceil(marble)}`);
+    console.log(`Lapis Lazuli required: ${Math.ceil(lapis)}`);
+    console.log(`Gold required: ${Math.ceil(gold)}`);
 
-    console.log(`Final pyramid height: ${steps * incrament}`);
+    console.log(`Final pyramid height: ${Math.floor(steps * incrament)}`);
 }
 
 calculatePyramidMaterials(12, 1);
