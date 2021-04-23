@@ -6,7 +6,7 @@ function calculatePyramidMaterials(base,  incrament) {
     let gold = 0;
 
     for (let step = base; step > 0; step-=2) {
-        if(step - 2 < 0){
+        if(step - 2 <= 0){
             gold += step * step * incrament;
         }
         else{
