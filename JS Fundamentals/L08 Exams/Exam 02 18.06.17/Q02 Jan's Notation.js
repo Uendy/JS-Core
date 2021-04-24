@@ -1,7 +1,8 @@
 function calculateArrayElements(input) {
+    let operands = ["+", "-", "*", "/"];
 
-    while (input.indexOf("+", "-", "/", "*") !== -1) {
-        let index = input.indexOf("+", "-", "/", "*");
+    while (getNextOperand(operands, input) !== Number.MAX_SAFE_INTEGER) {
+        let index = getNextOperand(operands, input);
         let operand = input[index];
 
         let numbers = new Map();
@@ -25,33 +26,54 @@ function calculateArrayElements(input) {
         let result = 0;
         switch (operand) {
             case "+":
-                result = firstNum + secondNum;
+                result = secondNum + firstNum;
                 break;
             case "-":
-                result = firstNum - secondNum;
+                result = secondNum - firstNum;
                 break;
             case "*":
-                result = firstNum * secondNum;
+                result = secondNum * firstNum;
                 break;
             case "/":
-                result = firstNum / second;
+                result = secondNum / firstNum;
                 break;
         }
 
-        // probably need to just re-make input, so that it is re-sized properly
+        
         input[index] = result;
         keys = numbers.keys();
         let firstIndex = keys.next().value;
         let secondIndex = keys.next().value;
         delete input[firstIndex];
         delete input[secondIndex];
+        
+        // probably need to just re-make input, so that it is re-sized properly
+        let temporaryArray = [];
+        input.forEach(element => {
+            temporaryArray.push(element);
+        });
+
+        input = temporaryArray;
     }
 
     if(input.length > 1){
         console.log("Error: not enough operands!");
     }
     else{
-        console.log(number[0]);
+        console.log(input[0]);
+    }
+
+    function getNextOperand(operands, input) {
+        let lowestIndex = Number.MAX_SAFE_INTEGER;
+
+        operands.forEach(op => {
+            let currentIndex = input.indexOf(op);
+            if(currentIndex !== -1 && currentIndex < lowestIndex) {
+                lowestIndex = currentIndex;
+            }
+        });
+
+        return lowestIndex;
     }
 }
 
