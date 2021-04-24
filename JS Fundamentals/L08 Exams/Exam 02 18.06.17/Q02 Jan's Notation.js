@@ -1,74 +1,52 @@
 function calculateArrayElements(input) {
 
-    for (let index = 0; index < input.length; index++) {
-        let current = input[index];
-        if(typeof current !== 'number'){
-            let firstNum = Number.NEGATIVE_INFINITY;
-            let secondNum = Number.NEGATIVE_INFINITY;
-            
-            // get the most recent numbers
-            for (let reverse = index - 1; reverse > 0; reverse--) {
-                let reverseElement = input[reverse];
-                if(typeof reverseElement === 'number'){
-                    if(firstNum === Number.NEGATIVE_INFINITY){
-                        firstNum = reverseElement;
-                    }
-                    else{
-                        secondNum = reverseElement;
-                    }
-                }
+    while (input.indexOf("+", "-", "/", "*") !== -1) {
+        let index = input.indexOf("+", "-", "/", "*");
+        let operand = input[index];
+
+        let numbers = new Map();
+        for (let i = index; i > 0; i--){
+            if(typeof input[i] === 'number'){
+                numbers.set(i, input[i]);
             }
 
-            if(firstNum === Number.NEGATIVE_INFINITY || secondNum === Number.NEGATIVE_INFINITY){
-                console.log("Error: too many operands");
-                return;
+            if(numbers.keys.length === 2){
+                break;
             }
+        }
 
-            let result = 0;
-            switch (current) {
-                case '+':
-                    result = firstNum + secondNum;
-                    break;
-                case '-':
-                    result = firstNum - secondNum;
-                    break;
-                case '*':
-                    result = firstNum * secondNum;
-                    break;
-                case '/':
-                    result = firstNum / secondNum;
-                    break;
-            }
+        if(numbers.keys.length !== 2){
+            console.log("Error: too many operands!");
+        }
+        
+        let keys = numbers.keys();
+        let result = 0;
+        switch (operand) {
+            case "+":
+                result = numbers[keys][0] + numbers[keys][1];
+                break;
+            case "-":
+                result = numbers[keys][0] - numbers[keys][1];
+                break;
+            case "*":
+                result = numbers[keys][0] * numbers[keys][1];
+                break;
+            case "/":
+                result = numbers[keys][0] / numbers[keys][1];
+                break;
+        }
 
-            // this wont work, because I need to find a way to add the result and remove the two numbers and operand
-        }        
+        input[index] = result;
+        delete input[keys][0];
+        delete input[keys][1];
     }
-    //let numbers = [];
-    //let operators = [];
-//
-    //for (let index = 0; index < input.length; index++) {
-    //    let current = input[index];
-//
-    //    if(typeof current === 'number') {
-    //        numbers.push(current);
-    //    }
-    //    else{
-    //        operators.push(current);
-    //    }
-    //}
-//
-    //// begin the additions and check if there is a number or operator error
-    //if(numbers.length !== operators.length + 1){
-    //    if(operators.length >= numbers.length){
-    //        console.log("Error: too many operands!");
-    //    }
-    //    else{
-    //        console.log("Error too enough opperands!");
-    //    }
-    //}
-    //else{
-    //    
-    //}
+
+    if(numbers.length > 1){
+        console.log("Error: not enough operands!");
+    }
+    else{
+        console.log(number[0]);
+    }
 }
 
 calculateArrayElements([31, 2, '+', 11, '/']);
