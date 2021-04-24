@@ -11,7 +11,7 @@ function calculateArrayElements(input) {
                 numbers.set(i, input[i]);
             }
 
-            if(numbers.keys.length === 2){
+            if([...numbers.keys()].length === 2){
                 break;
             }
         }
@@ -77,4 +77,5 @@ function calculateArrayElements(input) {
     }
 }
 
+calculateArrayElements([5, 3, 4, '*', '-']);
 calculateArrayElements([31, 2, '+', 11, '/']);
