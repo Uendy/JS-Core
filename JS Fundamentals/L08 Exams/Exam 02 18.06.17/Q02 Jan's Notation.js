@@ -17,7 +17,8 @@ function calculateArrayElements(input) {
         }
 
         if([...numbers.keys()].length !== 2){
-            console.log("Error: too many operands!");
+            console.log("Error: not enough operands!");
+            return;
         }
         
         let keys = numbers.keys();
@@ -57,7 +58,8 @@ function calculateArrayElements(input) {
     }
 
     if(input.length > 1){
-        console.log("Error: not enough operands!");
+        console.log("Error: too many operands!");
+        return;
     }
     else{
         console.log(input[0]);
