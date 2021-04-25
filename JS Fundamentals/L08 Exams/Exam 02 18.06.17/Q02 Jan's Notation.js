@@ -75,7 +75,7 @@ function calculateArrayElements(input) {
             }
         });
 
-        return lowestIndex;
+        return lowestIndex; 
     }
 }
 
