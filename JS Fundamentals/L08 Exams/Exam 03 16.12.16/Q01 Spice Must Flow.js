@@ -10,6 +10,9 @@ function calculateSpiceYield(start) {
     }
 
     spiceMined -= 26;
+    if(spiceMined < 0){
+        spiceMined = 0;
+    }
 
     console.log(days);
     console.log(spiceMined);
