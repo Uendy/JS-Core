@@ -1,34 +1,12 @@
 function generateTraffic(input) {
-    let planes = new Map();
+    let planes = new Set();
     let towns = new Map();
 
     input.forEach(plane => {
-      let [ID, town, passengers, action] = plane.split(" ");
-      
-      if(!(planes.has(ID) && action === "land") || !(!planes.has(ID) && action === "depart")){
-        let currentPlane = {"town": town, "passengers": passengers};
-        
-        if(action === "depart"){
-          planes.delete(ID);
-          if(towns.has(town)){
-            // update and add this
-            let currentTown = towns.get(town);
-            currentTown.departures += passengers;
-            currentTown.planes.add(ID);
-            towns.set(town, currentTown);
-          }
-          else{
-            // set the town as a destination
-            towns.set(town, {
-              "arrivals": passengers,
-              "departures": 0,
-              "planes": new HashMap(ID)  
-            });
-          }
-        }
-      }
-
+      let [ID, town, count, action] = plane.split(" ").filter(x => x !== "" && x !== " ");
+      let passengers = Number(count);
     });
+    
 }
 
 generateTraffic([
