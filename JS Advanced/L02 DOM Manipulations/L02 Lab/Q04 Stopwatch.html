@@ -18,17 +18,17 @@
         function stopwatch(){
             let seconds = 0;
             
-            let start = document.getElementById("startBtn");
-            start.addEventListener("click", start);
+            let startBtn = document.getElementById("startBtn");
+            startBtn.addEventListener("click", start);
 
-            let end = document.getElementById("endBtn");
-            end.addEventListener("click", stop);
+            let endBtn = document.getElementById("stopBtn");
+            endBtn.addEventListener("click", stop);
 
             let inerval;
 
             function start() {
-                start.disabled = true;
-                end.disabled = false;
+                startBtn.disabled = true;
+                endBtn.disabled = false;
                 interval = setInterval(function () {
                     seconds++;
                     document.getElementById("time").textContent = ("0" + Math.floor(seconds / 60)).slice(-2) 
@@ -39,8 +39,8 @@
 
             function stop() {
                 clearInterval(interval);
-                start.disabled = false;
-                end.disabled = true;
+                startBtn.disabled = false;
+                endBtn.disabled = true;
                 seconds = 0;
             }
         }
