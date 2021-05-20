@@ -28,11 +28,15 @@
 <body onload="create(['Section 1', 'Section 2', 'Section 3', 'Section 4']);">
 <script>
   function create(sentences) {
-        let strings = sentences.length;
-        let contentBox = document.getElementById("content");
-        for (let index = 0; index < strings.length; index++) {
-            let currentDiv = document.appendChild(document.createElement("div").appendChild(document.create("p").value = strings[index]));
-        }
+      for (let words of sentences) {
+          let div = document.createElement('div');
+          let p = document.createElement('p');
+          p.textContent = words;
+          div.appendChild(p);
+
+          let contentDiv = document.getElementById("content");
+          contentDiv.appendChild(div);
+      }
   }
 </script>
 </body>
