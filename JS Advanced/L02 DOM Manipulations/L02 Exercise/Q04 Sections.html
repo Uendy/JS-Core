@@ -29,10 +29,15 @@
 <script>
   function create(sentences) {
       for (let words of sentences) {
-          let div = document.createElement('div');
           let p = document.createElement('p');
           p.textContent = words;
+          p.style.display = "none";
+          
+          let div = document.createElement('div');
           div.appendChild(p);
+          div.addEventListener("click", function () {
+              p.style.display = "block";
+          });
 
           let contentDiv = document.getElementById("content");
           contentDiv.appendChild(div);
