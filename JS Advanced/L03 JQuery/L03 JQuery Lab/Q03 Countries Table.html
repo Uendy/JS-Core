@@ -28,9 +28,18 @@
         addCountryToTable("Bulgaria", "Sofia");
         addCountryToTable("Germany", "Berlin");
         addCountryToTable("Russia", "Moscow");
+        fixRowLinks();
 
         function addCountryToTable(country, capital) {
-
+            let tr = $("<tr>")
+                .append($("<td>").text(country))
+                .append($("<td>").text(capital))
+                .append($("<td>")
+                    .append('<a href="#">[Up] </a>')
+                    .append('<a href="#">[Down] </a>')
+                    .append('<a href="#">[Delete]</a>')
+                );
+            $("#countriesTable").append(tr);
         }
 
         function createCountry(){
@@ -47,6 +56,11 @@
 
         function deleteRow(){
 
+        }
+
+        function fixRowLinks(){
+            // to remove up for top country
+            // to remove down for bottom country
         }
     }
 </script>
