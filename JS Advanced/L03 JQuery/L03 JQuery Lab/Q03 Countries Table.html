@@ -36,14 +36,21 @@
                 .append($("<td>").text(capital))
                 .append($("<td>")
                     .append('<a href="#">[Up] </a>')
+                        .click(moveRowUp)
                     .append('<a href="#">[Down] </a>')
+                        .click(moveRowDown)
                     .append('<a href="#">[Delete]</a>')
+                        .click(deleteRow)
                 );
+            $(tr).css("display", "none");
             $("#countriesTable").append(tr);
+            tr.fadeIn(1000);
         }
 
         function createCountry(){
-
+            let country = $("#newCountryText").val();
+            let capital = $("#newCapitalText").val();
+            addCountryToTable(country, capital);
         }
 
         function moveRowUp(){
