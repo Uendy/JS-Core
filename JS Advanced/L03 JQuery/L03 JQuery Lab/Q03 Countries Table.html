@@ -48,13 +48,22 @@
         }
 
         function createCountry(){
-            let country = $("#newCountryText").val();
-            let capital = $("#newCapitalText").val();
-            addCountryToTable(country, capital);
+            let country = $("#newCountryText");
+            let capital = $("#newCapitalText");
+            addCountryToTable(country.val(), capital.val());
+            country.val("");
+            capital.val("");
         }
 
-        function moveRowUp(){
-            
+        function moveRowUp(event){
+            let row = $(this).parent();
+            if(row.index() > 2){
+                row.fadeOut(1000, function(){
+                row.fadeIn(1000);
+                row.insertBefore(row.prev())
+                })
+            }
+            fixRowLinks();
         }
 
         function moveRowDown(){
