@@ -53,6 +53,7 @@
             addCountryToTable(country.val(), capital.val());
             country.val("");
             capital.val("");
+            fixRowLinks();
         }
 
         function moveRowUp(){
@@ -80,12 +81,32 @@
         }
 
         function deleteRow(){
-            $(this).parent().parent().fadeOut(1000);
+            let element = $(this).parent().parent()
+            element.fadeOut(function() {
+                element.remove();
+                fixRowLinks();
+            });
+            
         }
 
         function fixRowLinks(){
+            let table = $("#countriesTable");
+
+            // show all up: (to reset the table)
+            table.find("tr")
+                .find("a:contains('Up')").css("display", "inline");
+
+            // show all down: (to reset the table)
+            table.find("tr")
+                .find("a:contains('Down')").css("display", "inline")
+
             // to remove up for top country
+            let firstRow = table.find("tr")[2];
+            $(firstRow).find("a:contains('Up')").css("display", "none");
+            
             // to remove down for bottom country
+            let lastRow = $("tr");
+            $(lastRow.last()).find("a:contains('Down')").css("display", "none");
         }
     }
 </script>
