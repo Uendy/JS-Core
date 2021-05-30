@@ -39,7 +39,16 @@ a:hover {
     <a class="button">Varna</a>
     <script>
         function attachEvents() {
-        
+            $(".button").on("click", function() {
+                let target = $(event.target);
+                if(target.hasClass("selected")){
+                    target.removeClass("selected");
+                }
+                else{
+                    target.addClass("selected");
+
+                }
+            })
         }
     </script>
 </body>
