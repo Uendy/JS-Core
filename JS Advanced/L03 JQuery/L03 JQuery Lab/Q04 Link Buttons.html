@@ -41,13 +41,8 @@ a:hover {
         function attachEvents() {
             $(".button").on("click", function() {
                 let target = $(event.target);
-                if(target.hasClass("selected")){
-                    target.removeClass("selected");
-                }
-                else{
-                    target.addClass("selected");
-
-                }
+                $(".selected").removeClass("selected");
+                target.addClass("selected");
             })
         }
     </script>
