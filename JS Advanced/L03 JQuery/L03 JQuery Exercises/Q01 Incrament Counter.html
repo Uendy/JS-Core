@@ -14,8 +14,20 @@
         window.onload = function(){
             increment("#wrapper");
         }
-        function increment() {
-            // TODO
+        function increment(selector) {
+            let container = $(selector);
+            let fragment = document.createDocumentFragment();
+            let textArea = $("<textarea>");
+            let incrementBtn = $("<button>Incrament</button>")
+            let addBtn = $("<button>Add</button>")
+            let list = $("<ul>")
+                
+            // Textarea Formation
+            textArea.val(0);
+            textArea.addClass("counter");
+            textArea.attr("disabled", true);
+
+            textArea.appendTo(fragment);
         }
     </script>
 </body>
