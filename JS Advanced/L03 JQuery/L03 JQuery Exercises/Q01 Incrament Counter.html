@@ -16,42 +16,30 @@
         }
         function increment(selector){
             let container = $(selector);
-            let fragment = document.createDocumentFragment();
-            let textArea = $("<textarea>");
-            let incrementBtn = $("<button>Increment</button>");
-            let addBtn = $("<button>Add</button>");
-            let list = $("<ul>");
+
+            /// Creating the elements and their classes and id's
+            let textArea = $("<textarea class='counter' value='0' disabled='disabled'></textarea><br />");
+            let incrementBtn = $("<button class='btn' id='incrementBtn'>Increment</button>");
+            let addBtn = $("<button class='btn' id='addBtn'>Add</button>");
+            let list = $("<ul class='results'>");
             
-            // Textarea formation
-            textArea.val(0);
-            textArea.addClass("counter");
-            textArea.attr("disabled", true);
-                
-            // Buttons formation
-            incrementBtn.addClass("btn");
-            incrementBtn.attr("id", "increment");
-            addBtn.addClass("btn");
-            addBtn.attr("id", "addBtn");
-
-            // List formation
-            list.addClass("results");
-
             // Events
             $(incrementBtn).on("click", function(){
                 textArea.val(+textArea.val() + 1);
+                console.log(textArea.val());
             });
             $(addBtn).on("click", function(){
+                list.append($("<li>${textArea.val()}</li>"));
                 let li = $("<li>${textArea.val()}</li>");
-                li.appendTo(list);
+                console.log(li);
+                list.append(li);
             });
 
-            // Appending to fragment
-            textArea.appendTo(fragment);
-            incrementBtn.appendTo(fragment);
-            addBtn.appendTo(fragment);
-            list.appendTo(fragment);
-
-            container.appendTo(fragment);
+            // Appending elements to document (no fragment this time)
+            $(container).append(textArea);
+            $(container).append(incrementBtn);
+            $(container).append(addBtn);
+            $(container).append(list);
         }
     </script>
 </body>
