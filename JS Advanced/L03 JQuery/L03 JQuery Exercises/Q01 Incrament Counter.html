@@ -29,9 +29,7 @@
                 console.log(textArea.val());
             });
             $(addBtn).on("click", function(){
-                list.append($("<li>${textArea.val()}</li>"));
-                let li = $("<li>${textArea.val()}</li>");
-                console.log(li);
+                let li = $(`<li>${textArea.val()}</li>`);
                 list.append(li);
             });
 
