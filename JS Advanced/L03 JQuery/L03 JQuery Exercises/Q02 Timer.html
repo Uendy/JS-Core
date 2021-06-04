@@ -42,16 +42,16 @@
 
         function updateTime(){
             let secondsVal = seconds.text();
-            let minutesValue = minutes.text();
-            let hoursValue = hours.text();
+            let minutesVal = minutes.text();
+            let hoursVal = hours.text();
             
-            seconds.text(+secondsVal + 1);
+            seconds.text(`0${(+secondsVal + 1)}`.slice(-2));
             if(secondsVal >= 60){
                 seconds.text(0);
-                minutes.text(+minutesVal + 1);
+                minutes.text(`0${(+minutesVal + 1)}`.slice(-2));
                 if(minutesVal >= 60){
                     minutes.text(0);
-                    hours.text(+hoursVal + 1);
+                    hours.text(`0${(+hoursVal + 1)}`.slice(-2));
                 }
             }
         }
