@@ -20,14 +20,41 @@
     <button id="start-timer">Start</button>
     <button id="stop-timer">Stop</button>
 </div>
-<script src="timer.js"></script>
 <script>
     window.onload=function(){
         timer();
     }
-    
+
     function timer() {
-        
+        let hours = $("#hours");
+        let minutes = $("#minutes");
+        let seconds = $("#seconds");
+        let interval = 0;
+        let step = 1;
+        let startTimer = $("#start-timer");
+
+        startTimer.on("click", function(){
+            interval = setInterval(updateTime, 1000);
+        })
+        $("stop-timer").on("click", function(){
+            clearInterval(interval);
+        })
+
+        function updateTime(){
+            let secondsVal = seconds.text();
+            let minutesValue = minutes.text();
+            let hoursValue = hours.text();
+            
+            seconds.text(+secondsVal + 1);
+            if(secondsVal >= 60){
+                seconds.text(0);
+                minutes.text(+minutesVal + 1);
+                if(minutesVal >= 60){
+                    minutes.text(0);
+                    hours.text(+hoursVal + 1);
+                }
+            }
+        }
     }
 </script>
 </body>
