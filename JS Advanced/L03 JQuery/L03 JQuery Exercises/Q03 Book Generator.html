@@ -17,8 +17,18 @@
         createBook("#wrapper", "Alice in Wonderland", "Lewis Carroll", 1111);
     }
 
-    function createBook(params) {
-        
+    function createBook(selector, title, author, ISBN) {
+        // creating the elements: 
+        let book = $("<div id=`book1`> style='boder: medium none;'></div>");
+        let bookTitle = $("<p class='title'>`${title}`</p>");
+        let bookAuthor = $("<p class='author'>`${author}`</p>");
+        let bookISBN = $("<p class='isbn'>`${ISBN}`</p>");
+        let selectBtn = $("<button class='select'>Select</button>");
+        let deselectBtn = $("<button class='deselect'>Deselect</button>");
+
+        // adding select and deselect functions:
+
+        // Appending to the document:
     }
 </script>
 </body>
