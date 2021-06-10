@@ -18,6 +18,8 @@
     }
 
     function createBook(selector, title, author, ISBN) {
+        let container = $(selector);
+
         // creating the elements: 
         let book = $("<div id=`book1`> style='boder: medium none;'></div>");
         let bookTitle = $("<p class='title'>`${title}`</p>");
@@ -29,6 +31,12 @@
         // adding select and deselect functions:
 
         // Appending to the document:
+        $(book).append(bookTitle);
+        $(book).append(bookAuthor);
+        $(book).append(bookISBN);
+        $(book).append(selectBtn);
+        $(book).append(deselectBtn);
+        $(container).append(book);
     }
 </script>
 </body>
