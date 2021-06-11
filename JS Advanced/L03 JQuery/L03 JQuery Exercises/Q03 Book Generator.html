@@ -11,7 +11,6 @@
 <div id="wrapper">
 
 </div>
-<script src="book-generator.js"></script>
 <script>
     window.onload = function () {
         createBook("#wrapper", "Alice in Wonderland", "Lewis Carroll", 1111);
@@ -21,10 +20,10 @@
         let container = $(selector);
 
         // creating the elements: 
-        let book = $("<div id=`book1`> style='boder: medium none;'></div>");
-        let bookTitle = $("<p class='title'>`${title}`</p>");
-        let bookAuthor = $("<p class='author'>`${author}`</p>");
-        let bookISBN = $("<p class='isbn'>`${ISBN}`</p>");
+        let book = $('<div id="book1" css="boder: medium none"></div>');
+        let bookTitle = $(`<p class='title'>${title}</p>`);
+        let bookAuthor = $(`<p class='author'>${author}</p>`);
+        let bookISBN = $(`<p class='isbn'>${ISBN}</p>`);
         let selectBtn = $("<button class='select'>Select</button>");
         let deselectBtn = $("<button class='deselect'>Deselect</button>");
 
