@@ -28,6 +28,14 @@
         let deselectBtn = $("<button class='deselect'>Deselect</button>");
 
         // adding select and deselect functions:
+        $(selectBtn).on('click', function(){
+            $(book).css({"border-color": "blue",
+                "border-width": "2px",
+                "border-style": "solid"});
+        })
+        $(deselectBtn).on('click', function(){
+
+        })
 
         // Appending to the document:
         $(book).append(bookTitle);
