@@ -97,6 +97,28 @@ label, legend{
     window.onload = function(){
         validate();
     }
+
+    function solve(){
+ 
+        let isCompany = false;
+        setEventHandlers();
+        function setEventHandlers() {
+        $("#registerForm").submit(function(e) {
+            e.preventDefault();
+            ValidateData();
+        });
+ 
+        $("#company").on("change", function () {
+            if ($("#company").is(":checked")){
+                $("#companyInfo").show();
+                isCompany = true;
+            }
+            else{
+                $("#companyInfo").hide();
+                isCompany = false;
+            }
+        });
+    }
 </script>
 </body>
 </html>
