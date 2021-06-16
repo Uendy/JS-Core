@@ -98,27 +98,41 @@ label, legend{
         validate();
     }
 
-    function solve(){
+        function solve(){
+        
+            let isCompany = false;
+            setEventHandlers();
+            function setEventHandlers() {
+            $("#registerForm").submit(function(e) {
+                e.preventDefault();
+                ValidateData();
+            });
+        
+            $("#company").on("change", function () {
+                if ($("#company").is(":checked")){
+                    $("#companyInfo").show();
+                    isCompany = true;
+                }
+                else{
+                    $("#companyInfo").hide();
+                    isCompany = false;
+                }
+            });
+        }
+
+        function ValidateData() {
+        let formIsValid = true;
  
-        let isCompany = false;
-        setEventHandlers();
-        function setEventHandlers() {
-        $("#registerForm").submit(function(e) {
-            e.preventDefault();
-            ValidateData();
-        });
- 
-        $("#company").on("change", function () {
-            if ($("#company").is(":checked")){
-                $("#companyInfo").show();
-                isCompany = true;
-            }
-            else{
-                $("#companyInfo").hide();
-                isCompany = false;
-            }
-        });
+        let username = $('#username').val();
+        if (!username.match(/^[a-zA-Z0-9]{3,20}$/)){
+            $('#username').css('border-color', 'red');
+            formIsValid = false;
+        }
+        else{
+            $('#username').css('border', 'none');
+        }
     }
+}   
 </script>
 </body>
 </html>
