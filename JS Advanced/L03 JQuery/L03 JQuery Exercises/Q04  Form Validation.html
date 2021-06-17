@@ -131,6 +131,18 @@ label, legend{
         else{
             $('#username').css('border', 'none');
         }
+
+        let email = $('#email').val();
+        if (!email.match(/^.*@.*\..*$/)){
+            $('#email').css('border-color', 'red');
+            formIsValid = false;
+        }
+        else{
+            $('#email').css('border', 'none');
+        }
+ 
+        let password = $('#password').val();
+        let confirmPassword = $('#confirm-password').val();
     }
 }   
 </script>
