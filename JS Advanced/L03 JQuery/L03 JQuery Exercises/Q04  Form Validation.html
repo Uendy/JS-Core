@@ -143,6 +143,28 @@ label, legend{
  
         let password = $('#password').val();
         let confirmPassword = $('#confirm-password').val();
+
+        console.log(password);
+        console.log(confirmPassword);
+ 
+        if (!password.match(/^[\w]{5,15}$/)){
+            $('#password').css('border-color', 'red');
+            $('#confirm-password').css('border-color', 'red');
+            formIsValid = false;
+        }
+        else{
+            if (!confirmPassword.match(/^[\w]{5,15}$/) ||
+                password != confirmPassword){
+                $('#password').css('border-color', 'red');
+                $('#confirm-password').css('border-color', 'red');
+                formIsValid = false;
+            }
+            else{
+ 
+                $('#password').css('border', 'none');
+                $('#confirm-password').css('border', 'none');
+            }
+        }
     }
 }   
 </script>
