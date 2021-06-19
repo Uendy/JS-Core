@@ -165,6 +165,17 @@ label, legend{
                 $('#confirm-password').css('border', 'none');
             }
         }
+
+        if (isCompany){
+            let companyNumber = $("#companyNumber").val();
+            if (!companyNumber.match(/^[1-9][0-9]{3}$/)){
+                $("#companyNumber").css('border-color', 'red');
+                formIsValid = false;
+            }
+            else{
+                $("#companyNumber").css('border', 'none');
+            }
+        }
     }
 }   
 </script>
