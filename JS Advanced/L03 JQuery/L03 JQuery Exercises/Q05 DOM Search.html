@@ -42,8 +42,21 @@
 <script>
     domSearch("#content",false);
     function domSearch() {
-        // TODO
-    }
-</script>
+        domSearch('#content', false);
+        function domSearch(selector, caseSensitive) {
+            $('<div>')
+                .addClass('add-controls')
+                .append($('<label>')
+                  .text('Enter text: ')
+                  .append($('<input>')))
+                .append($('<a>')
+                  .text('Add')
+                  .addClass('button')
+                  .css('display', 'inline-block')
+                  .click(addNewItem))
+                .appendTo(selector);
+            };
+    };
+ </script>
 </body>
 </html>
