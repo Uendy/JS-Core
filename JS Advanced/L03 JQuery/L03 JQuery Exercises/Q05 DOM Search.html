@@ -56,7 +56,21 @@
                   .click(addNewItem))
                 .appendTo(selector);
             };
-    };
+
+            $('<div>')
+                .addClass('search-controls')
+                .append($('<label>')
+                  .text('Search: ')
+                  .append($('<input>')
+                    .change(filterItems)))
+                .appendTo(selector);
+
+            $('<div>')
+                .addClass('result-controls')
+                .append($('<ul>')
+                    .addClass('items-list'))
+                .appendTo(selector);
+    }
  </script>
 </body>
 </html>
