@@ -70,6 +70,27 @@
                 .append($('<ul>')
                     .addClass('items-list'))
                 .appendTo(selector);
+
+            function filterItems() {
+                let searchedText = $('.search-controls input').val();
+                let text;
+                $('.list-item').each((i, e) => {
+                    if (caseSensitive) {
+                        text = e.textContent;
+                    } 
+                    else {
+                        searchedText = searchedText.toUpperCase();
+                        text = e.textContent.toUpperCase();
+                    }
+              
+                    if (text.indexOf(searchedText) === -1) {
+                        $(e).css('display', 'none');
+                    } 
+                    else {
+                        $(e).css('display', 'block');
+                    }
+                });
+            }
     }
  </script>
 </body>
