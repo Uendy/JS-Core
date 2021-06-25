@@ -91,7 +91,29 @@
                     }
                 });
             }
-    }
+
+            function addNewItem() {
+                const item = $('.add-controls input');
+
+                if (item.val().trim()) {
+                  $(`<li>`)
+                    .addClass('list-item')
+                    .append($('<a>')
+                      .addClass('button')
+                      .text('X')
+                      .css('display', 'inline-block')
+                      .click(deleteItem))
+                    .append($(`<strong>${item.val().trim()}</strong>`))
+                    .appendTo($('.result-controls ul'));
+                    
+                  item.val('');
+                }
+            }
+
+            function deleteItem() {
+                $(this).parent().remove();
+            }
+    }     
  </script>
 </body>
 </html>
